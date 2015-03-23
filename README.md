@@ -1,5 +1,5 @@
-# Arch-Install
-Arch Instal
+# Arch-Install for BIOS
+Arch Install Guide BTRFS for BIOS
 
 1. HardDrive Setup
   ```
