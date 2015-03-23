@@ -1,5 +1,5 @@
 # Arch-Install
-Arch Install Notes
+Arch Instal
 
 1. HardDrive Setup
   ```
@@ -99,4 +99,16 @@ Arch Install Notes
   
   yaourt -S mkinitcpio-btrfs
   
+  sed -i 's/MODULE="i915"/MODULE="crc32c i915"/' /etc/mkinitcpio.conf
+  
+  sed -i 's/fsck/btrfs_advanced/' /etc/mkinitcpio.conf
+  
+  mkinitcpio -p linux
+  
+  btrfs subvolume list -t /btrfs
+  
+  ```
+  
+5. Edit fstab
+  ```
   ```
