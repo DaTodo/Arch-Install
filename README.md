@@ -65,8 +65,8 @@ Arch Instal
   pkill haveged
   
   ```
-  ```
   #####Editting pacman.conf and mirrorlist
+  ```
   
   sed -i'' '92,93 s/#/^/g' /etc/pacman.conf
   
@@ -77,22 +77,20 @@ Arch Instal
   sed -i '297s/#/^/g' /etc/pacman.d/mirrorlist
   
   ```
-  
+  #####Adding User
   ```
   
-  #####Adding User
+  useradd user
   
-  useradd korey
+  (echo password) | gpasswd -a user wheel
   
-  (echo Docc1991) | gpasswd -a korey wheel
+  echo "user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
   
-  echo "korey ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+  mkdir /home/user
   
-  mkdir /home/korey
+  chown user:user /home/user
   
-  chown korey:korey /home/korey
-  
-  su korey
+  su user
   
   ```
   ```
