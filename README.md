@@ -1,5 +1,5 @@
 # Arch-Install
-Arch Instal
+Arch Install Notes
 
 1. HardDrive Setup
   ```
