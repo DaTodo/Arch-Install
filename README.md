@@ -82,7 +82,7 @@ Arch Install Guide BTRFS for BIOS
   
   useradd user
   
-  (echo password) | gpasswd -a user wheel
+  gpasswd -a user wheel
   
   echo "user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
   
