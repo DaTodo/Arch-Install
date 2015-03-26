@@ -125,11 +125,10 @@ sys_setup() {
 }
 
 pacman_conf() {
-  #@TODO: THIS IS HORRIBLE. FIX THIS SOON
-  chroot /mnt sed -i'' '92,93 s/#/^/g' /etc/pacman.conf
-  chroot /mnt sed -i '94s/^/[archlinuxfr]/' /etc/pacman.conf
-  chroot /mnt sed -i '/[archlinuxfr]/a\Server = http://repo.archlinux.fr/$arch' /etc/pacman.conf 
-  chroot /mnt sed -i '297s/#/^/g' /etc/pacman.d/mirrorlist
+  #@TODO: THIS IS AWESOME. NO NEED TO FIX THIS SOON
+  chroot /mnt (echo "[multilib]"; echo "Include = /etc/pacman.d/mirrorlist"; echo "[archlinuxfr]"; echo "Server = http://repo.archlinux.fr/$arch";) >> /etc/pacman.conf 
+  chroot /mnt sed -i '/SigLevel/s/^/#/g' /etc/pacman.conf
+  #chroot /mnt sed -i '297s/^#//g' /etc/pacman.d/mirrorlist
 }
 
 user_conf() {
